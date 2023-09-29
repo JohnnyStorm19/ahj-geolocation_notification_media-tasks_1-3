@@ -1,0 +1,73 @@
+.timeline-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 1rem;
+    width: 50%;
+    height: 95%;
+    border-radius: 20px;
+    background-color: var(--main-bg-color);
+    box-shadow: 9.6px 9.6px 44.15px 0px rgba(106, 106, 106, 0.22), -9.6px -9.6px 21.11px 0px rgba(249, 249, 249, 0.30);
+}
+.messages-container {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    height: 85%;
+    padding: 1rem;
+    overflow-y: scroll;
+    border-radius: 20px;
+    scrollbar-color: var(--btn-color) transparent;
+}
+.messages-form {
+    position: absolute;
+    display: flex;
+    gap: 5px;
+    width: 80%;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.message-input {
+    border: 1px solid var(--borders-color);
+    border-radius: 15px;
+    padding: .5rem;
+    width: 75%;
+}
+.form-buttons {
+    width: 25%;
+    display: flex;
+    justify-content: space-between;
+}
+.send-btn, .send-video-btn, .send-audio-btn {
+    border: 1px solid var(--borders-color);
+    border-radius: 50%;
+    padding: .3rem;
+    width: 40px;
+    height: 40px;
+    background-color: var(--btn-color);
+    color: var(--btn-font-color);
+}
+
+.form-buttons svg {
+    display: block;
+    margin: 0 auto;
+}
+
+.disabled {
+    display: none;
+}
+
+.messages-container::-webkit-scrollbar {
+    width: 10px;
+}
+.messages-container::-webkit-scrollbar-track {
+    background: transparent; 
+  }
+  
+.messages-container::-webkit-scrollbar-thumb {
+    background-color: var(--btn-color);
+    border-radius: 20px;
+    border: 3px solid var(--main-bg-color);
+  }

@@ -1,0 +1,17 @@
+.message-container {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    border: 1px solid var(--borders-color);
+    border-radius: 15px;
+}
+.message-content {
+    font-size: 1.2rem;
+    word-break: break-all; 
+}
+.message-date, .message-coords {
+    font-size: .8rem;
+}
+.message-date {
+    align-self: flex-end;
+}
