@@ -21,6 +21,20 @@ export default class MediaPlayer {
     static getVideoPlayerMarkup() {
         return `
             <div class="video-player-container stream">
+                <span class="close-media">
+                <svg fill="red" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                width="30px" height="30px" viewBox="0 0 24 24" xml:space="preserve">
+                        <g>
+                            <g>
+                                <path d="M20,0H4C1.794,0,0,1.794,0,4v16c0,2.206,1.794,4,4,4h16c2.206,0,4-1.794,4-4V4C24,1.794,22.206,0,20,0z M22,20
+                                    c0,1.104-0.896,2-2,2H4c-1.103,0-2-0.896-2-2V4c0-1.103,0.897-2,2-2h16c1.104,0,2,0.897,2,2V20z"/>
+                                <path d="M17.423,6.779H13.9l-0.918,1.687c-0.278,0.513-0.535,1.046-0.812,1.602h-0.042c-0.277-0.491-0.555-1.025-0.854-1.56
+                                    l-1.025-1.729h-3.63l3.459,5.125L6.534,17.22H10.1l0.981-1.879c0.256-0.512,0.535-1.024,0.79-1.58h0.064
+                                    c0.256,0.534,0.512,1.067,0.811,1.58l1.046,1.879h3.673l-3.48-5.466L17.423,6.779z"/>
+                            </g>
+                        </g>
+                    </svg>
+                </span>
                 <video class="video-player" autoplay muted width="320"></video>
                 <div class="video-buttons">
                     <button type="button" class="stop-video-btn disabled">Остановить запись</button>
@@ -38,6 +52,20 @@ export default class MediaPlayer {
     static getAudioPlayerMarkup() {
         return `
             <div class="audio-player-container stream">
+                <span class="close-media">
+                    <svg fill="red" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                    width="30px" height="30px" viewBox="0 0 24 24" xml:space="preserve">
+                            <g>
+                                <g>
+                                    <path d="M20,0H4C1.794,0,0,1.794,0,4v16c0,2.206,1.794,4,4,4h16c2.206,0,4-1.794,4-4V4C24,1.794,22.206,0,20,0z M22,20
+                                        c0,1.104-0.896,2-2,2H4c-1.103,0-2-0.896-2-2V4c0-1.103,0.897-2,2-2h16c1.104,0,2,0.897,2,2V20z"/>
+                                    <path d="M17.423,6.779H13.9l-0.918,1.687c-0.278,0.513-0.535,1.046-0.812,1.602h-0.042c-0.277-0.491-0.555-1.025-0.854-1.56
+                                        l-1.025-1.729h-3.63l3.459,5.125L6.534,17.22H10.1l0.981-1.879c0.256-0.512,0.535-1.024,0.79-1.58h0.064
+                                        c0.256,0.534,0.512,1.067,0.811,1.58l1.046,1.879h3.673l-3.48-5.466L17.423,6.779z"/>
+                                </g>
+                            </g>
+                    </svg>
+                </span>
                 <audio class="audio-player"></audio>
                 <div class="audio-buttons">
                     <button type="button" class="stop-audio-btn disabled">Остановить запись</button>
@@ -71,6 +99,7 @@ export default class MediaPlayer {
 
         this.timerContainerEl = this.parentEl.querySelector('.timer-container');
         this.errorEl = this.parentEl.querySelector('.media-error');
+        this.closeMediaEl = this.parentEl.querySelector('.close-media');
 
         this.addListeners();
     }
@@ -84,6 +113,7 @@ export default class MediaPlayer {
             this.stopVideoBtn.addEventListener('click', () => this.onStopRecording());
             this.startVideoBtn.addEventListener('click', () => this.onStartMedia());
         }
+        this.closeMediaEl.addEventListener('click', this.onCloseMedia);
     }
 
     addOnSubmitVideoFunc(callback) {
@@ -205,6 +235,11 @@ export default class MediaPlayer {
 
     hideError() {
         this.errorEl.classList.add('disabled');
+    }
+
+    onCloseMedia(e) {
+        const streamContainer = e.target.closest('.stream');
+        streamContainer.remove();    
     }
 
     startTimer() {

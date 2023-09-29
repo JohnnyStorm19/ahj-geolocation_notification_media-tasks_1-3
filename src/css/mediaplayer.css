@@ -63,6 +63,20 @@ button {
     border-radius: 15px;
 }
 
+.close-media {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    font-weight: bold;
+    cursor: pointer;
+}
+.close-media:active {
+    scale: 0.9;
+}
+.close-media svg:hover {
+    fill: #f9f9f9;
+}
+
 .disabled {
     visibility: hidden;
 }
