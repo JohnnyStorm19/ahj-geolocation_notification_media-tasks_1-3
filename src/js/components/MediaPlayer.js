@@ -107,7 +107,7 @@ export default class MediaPlayer {
             }
 
             if (!this.errorEl.classList.contains('disabled')) {
-                hideError(); // скрываем ошибку
+                this.hideError(); // скрываем ошибку
             }
             
         } catch (error) {

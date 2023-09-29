@@ -1,10 +1,9 @@
 {
     "env": {
         "browser": true,
-        "es2021": true,
-        "jest": true
+        "es2021": true
     },
-    "extends": "airbnb-base",
+    "extends": "eslint:recommended",
     "overrides": [
     ],
     "parserOptions": {
@@ -12,15 +11,5 @@
         "sourceType": "module"
     },
     "rules": {
-        "no-restricted-syntax": [
-            "error",
-            "LabeledStatement",
-            "WithStatement"
-            ]            
-    },
-    "import/no-extraneous-dependencies": [
-        "error", {
-            "devDependencies": true
-        }
-    ]
+    }
 }

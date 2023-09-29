@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-escape */
 export default function editCoords(str) {
     const regexp = /[\[\]]/g;
     const coords = str.split(',').map(s => {

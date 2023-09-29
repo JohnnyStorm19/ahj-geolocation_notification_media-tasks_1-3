@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-escape */
 import editCoords from './editCoords';
 import '../../css/modal.css';
 
@@ -28,7 +29,7 @@ export default class Modal {
                 <form class="modal-form" method="dialog">
                     <input type="text" class="modal-input" placeholder="Например: 51.50851, 0.12572" required pattern="^[+-]?(90(.\d+)?|[1-8]?\d(.\d+)?)\s*,\s*[+-]?(180(.\d+)?|(1[0-7]\d|\d{1,2})(.\d+)?)$">
                     <div class="modal-buttons">
-                        <button type="button" class="modal-cancel-btn"  >Отмена</button>
+                        <button type="button" class="modal-cancel-btn">Отмена</button>
                         <button type="submit" class="modal-send-btn">OK</button>
                     </div>
                 </form>
@@ -60,7 +61,7 @@ export default class Modal {
     this.modalContainer.showModal();
   }
 
-  closeModal = (e) => {
+  closeModal = () => {
     this.modalContainer.close();
   }
 
